@@ -10,6 +10,7 @@ using Core.Interfaces.IRepositories;
 using Microsoft.EntityFrameworkCore;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace ArtHoseWeb
 {
@@ -51,7 +52,7 @@ namespace ArtHoseWeb
         {
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1.0", new OpenApiInfo() { Title = "BetConstruct.Stat.Commerce.API", Version = "0.0.1" });
+                c.SwaggerDoc("v1.0", new OpenApiInfo() { Title = Assembly.GetExecutingAssembly().GetName().Name, Version = "0.0.1" });
             });
         }
 
